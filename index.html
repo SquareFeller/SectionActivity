@@ -14,7 +14,7 @@
                 this.input.on('pointerdown', (event) => {
                     this.tweens.add({
                         targets: this.meep,
-                        scale: 2,
+                        scale: 1.5,
                         duration: 100
                     });
                 });
@@ -31,7 +31,7 @@
                 let {x,y,isDown} = this.input.activePointer;
                 this.meep.setPosition(x,y);
 
-                if(isDown && Math.random() < 0.025) {
+                if(isDown && Math.random() < 0.01) {
                     // twerk the mouse
                     this.tweens.add({
                         targets: this.meep,
@@ -56,7 +56,7 @@
                     this.tweens.add({
                         targets: dropping,
                         alpha: {from: 0.5, to: 0},
-                        duration: 5000,
+                        duration: 3000,
                         ease: 'Cubic.in',
                         onComplete: () => dropping.destroy()
                     });
